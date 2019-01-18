@@ -1,7 +1,7 @@
 # NOVIZ Website
 
 All the code for the NOVIZ website is in here.
-Under [dist/](dist/) you can find the source code for the live website. In the [test/](test/) directory is the website update we are working on.
+The source code is in [src/](src/), under [dist/](dist/) you can find code for the live website and in the [test/](test/) directory is the website version we are working on.
 
 ## Development
 
