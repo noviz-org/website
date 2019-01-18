@@ -37,9 +37,10 @@ Also worth mentioning: The command snippets are bash. (Works on Linux or macOS) 
 
     This might take some time. What this does is installing all the necessairy bits and pieces to start developing.
 
-    Here is a list of some of the most important software:
+    Here is a list of the most essential software that you are installing now:
     - [Webpack](https://webpack.js.org/)
     - [TypeScript](https://www.typescriptlang.org/)
+    - [Sass](https://sass-lang.com/)
 
     More about those later.
 

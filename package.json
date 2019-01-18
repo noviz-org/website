@@ -4,7 +4,10 @@
   "description": "The official website of NOVIZ",
   "private": true,
   "scripts": {
-    "test": "webpack-dev-server --open"
+    "test": "webpack-dev-server --open",
+    "prod": "npm run build",
+    "build": "webpack --mode=production",
+    "deploy": "echo \"TODO\""
   },
   "author": "NOVIZ",
   "license": "ISC",
