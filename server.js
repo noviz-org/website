@@ -1,18 +1,7 @@
-const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
+var connect = require('connect');
+var serveStatic = require('serve-static');
 
-const app = express();
-const config = require('./webpack.config.js');
-const compiler = webpack(config);
-
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
-app.use(webpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath
-}));
-
-// Serve the files on port 3000.
-app.listen(3000, function () {
-  console.log('Dev server listening on port 3000!\n');
+connect().use(serveStatic("dist")).listen(3000, function(){
+    console.log('Test server running on 3000...');
+    console.log('http://localhost:3000')
 });

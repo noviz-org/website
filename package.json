@@ -6,15 +6,16 @@
   "scripts": {
     "test": "webpack-dev-server --open",
     "build": "webpack --mode=production",
-    "prod": "npm run build",
-    "deploy": "echo \"TODO\"",
-    "server": "node server.js"
+    "prod": "npm run build; ./copy_dist.sh",
+    "deploy": "./deploy.sh",
+    "test-dist": "node server.js"
   },
   "author": "NOVIZ",
   "devDependencies": {
     "@types/bootstrap": "^4.2.0",
     "@types/jquery": "^3.3.29",
     "clean-webpack-plugin": "^1.0.0",
+    "connect": "^3.6.6",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
     "express": "^4.16.4",
@@ -27,6 +28,7 @@
     "path": "^0.12.7",
     "sass": "^1.16.1",
     "sass-loader": "^7.1.0",
+    "serve-static": "^1.13.2",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
     "typescript": "^3.2.4",
