@@ -8,7 +8,8 @@
     "build": "webpack --mode=production",
     "prod": "npm run build; ./copy_dist.sh",
     "deploy": "./deploy.sh",
-    "test-dist": "node server.js"
+    "test-noviz": "node server.js --site=noviz",
+    "test-sr": "node server.js --site=speaking-radar"
   },
   "author": "NOVIZ",
   "devDependencies": {
@@ -24,6 +25,7 @@
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.6.0",
     "mini-css-extract-plugin": "^0.5.0",
+    "minimist": "^1.2.0",
     "node-sass": "^4.11.0",
     "path": "^0.12.7",
     "sass": "^1.16.1",

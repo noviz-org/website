@@ -98,7 +98,8 @@ Note that the directories here don't have to be empty. We just don't list everyt
 The **dist/** directory contains all the live websites.
 At the moment, these websites should be in there:
 
-- noviz/ for noviz.ch
+- noviz/ for noviz.ch ([live-website](https://github.com/noviz-org/live-website))
+- sr-website/ for sr.noviz.ch ([speaking-radar-website](https://github.com/noviz-org/speaking-radar-website))
 
 These folders are actually git submodules and their content and properties should be cloned when cloning the webiste repository. If you are using VSCode it will be marked as a submodule with a S on the right.
 
@@ -113,7 +114,8 @@ git submodule status
 You should now see something like this in the terminal:
 
 ```.txt
- 9e6ee195a45bc70d08503b7fe4cdfc3158c200e2 noviz (heads/development)
+ 9e6ee195a45bc70d08503b7fe4cdfc3158c200e2 dist/noviz (heads/development)
+ 1549ee75b0343074f3cdd2e23f816e6f2bae5400 dist/sr-website (heads/development)
 ```
 
 Now, if you got an error doing that, it is very possible the folder dist is not a submodule. If this is the case, change directory out of the folder, delete it and clone it as a submoduel from the live-website repository. The commands for this exact problem are described in [this section]().
@@ -236,7 +238,15 @@ If you want to review a pull request you most likely want to change into the dev
 Get back to the website root directory and run this npm script to start a test server with the dist files:
 
 ```.sh
-npm run test-dist
+npm run test-noviz
+```
+
+If you want to test a different submodule or website check those out:
+
+To test the **speaking-radar-website** run:
+
+```.sh
+npm run test-sr
 ```
 
 ### Documentation

@@ -4,33 +4,14 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
-    entry: './src/scripts/index.ts',
+var config = {
     plugins: [
-        new CleanWebpackPlugin(["test"]),
-        new HtmlWebpackPlugin({
-            template: "./src/html/index.html"
-        }),
-        new CopyWebpackPlugin([
-            {
-                from: 'src/resources',
-                to: 'resources'
-            }
-        ]),
-        new MiniCssExtractPlugin({
-            filename: "styles.css"
-        })
+        new CleanWebpackPlugin(["test"])
     ],
     //devtool: 'inline-source-map',
     devServer: 
     {
-        contentBase: './test'
-    },
-    output: 
-    {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, 'test'),
-        publicPath: "/"
+        contentBase: './test/noviz/'
     },
     module: {
         rules: [
@@ -84,5 +65,45 @@ module.exports = {
     resolve: {
         // Add `.ts` and `.tsx` as a resolvable extension.
         extensions: [".ts", ".tsx", ".js"]
-      },
+    },
 };
+
+var novizConfig = Object.assign({}, config, {
+    name: "noviz",
+    entry: "./src/sites/noviz/index.ts",
+    output: {
+        path: __dirname + "/test/noviz",
+        filename: "bundle.js",
+        publicPath: "/"
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/sites/noviz/index.html",
+            filename: "index.html"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "styles.css"
+        })
+    ],
+});
+
+var srConfig = Object.assign({}, config, {
+    name: "sr-website",
+    entry: "./src/sites/sr-website/index.ts",
+    output: {
+        path: __dirname + "/test/sr-website",
+        filename: "bundle.js",
+        publicPath: "/"
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/sites/sr-website/index.html",
+            filename: "index.html"
+        }),
+        new MiniCssExtractPlugin({
+            filename: "styles.css"
+        })
+    ]
+});
+
+module.exports = [novizConfig, srConfig];
