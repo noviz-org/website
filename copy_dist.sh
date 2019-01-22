@@ -11,9 +11,9 @@ cd ../..
 
 # clean
 echo "Cleaning up dist/noviz"
-find dist/noviz/ -type f ! -name '*.md' -delete
+find dist/noviz/ -type f ! -name '*.md' ! -name '.git' -delete
 echo "Cleaning up dist/sr-website"
-find dist/sr-website/ -type f ! -name '*.md' -delete
+find dist/sr-website/ -type f ! -name '*.md' ! -name '.git' -delete
 
 #copy
 cp -v test/noviz/* dist/noviz
