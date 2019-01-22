@@ -1,3 +1,6 @@
 [submodule "dist/noviz"]
 	path = dist/noviz
 	url = https://github.com/noviz-org/live-website.git
+[submodule "dist/sr-website"]
+	path = dist/sr-website
+	url = https://github.com/noviz-org/speaking-radar-website.git
