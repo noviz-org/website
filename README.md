@@ -1,7 +1,7 @@
 # NOVIZ Website
 
-All the code for the NOVIZ website is in here.
-The source code is in [src/](src/), under [dist/](dist/) you can find code for the live website and in the [test/](test/) directory is the website version we are working on.
+All the source code for the NOVIZ website is in here along with the development environment.
+The source code is in [src/](src/), under [dist/](dist/) you can find code for the live websites and in the [test/](test/) directory are the website versions we are working on.
 
 ## Development
 
@@ -73,7 +73,8 @@ You should have this or a similiar folder strucure on your hands:
 ```.txt
 .
 ├── dist/
-│   └── noviz/ (S)
+│   ├── noviz/        (S)
+│   └── sr-website/   (S)
 ├── node_modules/
 ├── src/
 │   ├── html/
@@ -103,7 +104,7 @@ At the moment, these websites should be in there:
 
 These folders are actually git submodules and their content and properties should be cloned when cloning the webiste repository. If you are using VSCode it will be marked as a submodule with a S on the right.
 
-While we're at it, let's check if they are healthy and change the branch for those you are working on.
+While we're at it, let's check if they are healthy and change the branch to development.
 
 To list the submodules run:
 
@@ -118,14 +119,12 @@ You should now see something like this in the terminal:
  1549ee75b0343074f3cdd2e23f816e6f2bae5400 dist/sr-website (heads/development)
 ```
 
-Now, if you got an error doing that, it is very possible the folder dist is not a submodule. If this is the case, change directory out of the folder, delete it and clone it as a submoduel from the live-website repository. The commands for this exact problem are described in [this section]().
-
 If not, go ahead and change the branch.
 
-Change into the directory *dits/*:
+Change into the directory *dist/noviz/*:
 
 ```.sh
-cd dist
+cd dist/noviz/
 ```
 
 And change the branch to development:
@@ -134,18 +133,19 @@ And change the branch to development:
 git checkout development
 ```
 
+do the same in the folder for the other websites like *dist/sr-website*
+
 #### The src directory
 
 The src directory contains all the source code for the website.
 
-- All the markup and images and resources for the markup are stored in the *html/* folder.
-- Additional resources are stored in the *resources* folder.
-- In the *scripts/* folder are the TypeScript files that are compiled into the bundle.js.
-- The *styles/* direcory contains all the Sass files that are compiled into a styles.css file.
+There is a folder called **sites**. In there are all the resources essential to one site.
+Scripts and or things like Stylesheets that are used across multiple of our websites are stored in the respective *scripts/* and *styles/* folder.
+
 
 #### The test direcory
 
-The test directoy is home to development builds.
+The test directoy is home to development builds. Webpack will place the successful builds there.
 
 #### The scripts
 
@@ -181,7 +181,7 @@ It is also good if you have already read the [Envirnoment](#Environment) chapter
 
 Make sure you are on the development branch in the dist directory.
 
-You can do this by going into the *dist/* directory and running:
+You can do this by going into the *dist/noviz/* or *dist/sr-website/* directory and running:
 
 ```.sh
 git checkout development
