@@ -1,10 +1,20 @@
 #!/bin/bash
 
 # first make sure dist is on the development branch
-cd dist
+cd dist/noviz
+pwd
 git checkout development
-cd ..
+cd ../sr-website
+pwd
+git checkout development
+cd ../..
 
-# copy paste
-find . -type f ! -name '*.md' -delete
-cp -v test/* dist/
+# clean
+echo "Cleaning up dist/noviz"
+find dist/noviz/ -type f ! -name '*.md' -delete
+echo "Cleaning up dist/sr-website"
+find dist/sr-website/ -type f ! -name '*.md' -delete
+
+#copy
+cp -v test/noviz/* dist/noviz
+cp -v test/sr-website/* dist/sr-website

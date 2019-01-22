@@ -77,6 +77,7 @@ var novizConfig = Object.assign({}, config, {
         publicPath: "/"
     },
     plugins: [
+        new CleanWebpackPlugin(["test/noviz"]),
         new HtmlWebpackPlugin({
             template: "./src/sites/noviz/index.html",
             filename: "index.html"
@@ -96,6 +97,7 @@ var srConfig = Object.assign({}, config, {
         publicPath: "/"
     },
     plugins: [
+        new CleanWebpackPlugin(["test/sr-website"]),
         new HtmlWebpackPlugin({
             template: "./src/sites/sr-website/index.html",
             filename: "index.html"

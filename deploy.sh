@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd dist;
+cd dist/noviz;
 git checkout development;
 git commit -a;
-cd ..
+cd ../sr-website;
+git checkout development;
+git commit -a;
+cd ../..
