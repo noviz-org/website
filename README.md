@@ -72,7 +72,8 @@ You should have this or a similiar folder strucure on your hands:
 
 ```.txt
 .
-├── dist/ (S)
+├── dist/
+│   └── noviz/ (S)
 ├── node_modules/
 ├── src/
 │   ├── html/
@@ -94,11 +95,16 @@ Note that the directories here don't have to be empty. We just don't list everyt
 
 #### The dist directory
 
-The **dist/** directory contains the live website. This is actually also a git submodule and its content and properties should be cloned with git clone. If you are using VSCode it will be marked as a submodule with a S on the right.
+The **dist/** directory contains all the live websites.
+At the moment, these websites should be in there:
 
-While we're at it, let's check if it's healthy and change the branch.
+- noviz/ for noviz.ch
 
-And now run:
+These folders are actually git submodules and their content and properties should be cloned when cloning the webiste repository. If you are using VSCode it will be marked as a submodule with a S on the right.
+
+While we're at it, let's check if they are healthy and change the branch for those you are working on.
+
+To list the submodules run:
 
 ```.sh
 git submodule status
@@ -107,10 +113,10 @@ git submodule status
 You should now see something like this in the terminal:
 
 ```.txt
- 9e6ee195a45bc70d08503b7fe4cdfc3158c200e2 dist (heads/development)
+ 9e6ee195a45bc70d08503b7fe4cdfc3158c200e2 noviz (heads/development)
 ```
 
-Now, if you got an error doing that, it is very possible the folder dist is not a submodule. If this is the case, change directory out of the folder, delete it and clone it as a submoduel from the live-website repository. The commands for this exact problem are described in [this section](#make-dist-a-submodule).
+Now, if you got an error doing that, it is very possible the folder dist is not a submodule. If this is the case, change directory out of the folder, delete it and clone it as a submoduel from the live-website repository. The commands for this exact problem are described in [this section]().
 
 If not, go ahead and change the branch.
 
@@ -262,35 +268,3 @@ We are using Fontawesome via a CDN.
 To use just look up a icon on the font awesome site and use the html element and class for it and it will just magically appear.
 
 ### Problems & Solutions
-
-#### make dist a submodule
-
-The easiest way to make the dist folder a submodule is the following:
-
-1. Make sure you are one folder structure above the *dist/* directory
-
-    This command should output dist, or you are not at the correct location.
-
-    ```.sh
-    ls | grep dist$
-    ```
-
-2. remove the *dist/* folder
-
-    I know it's not what you came for but trust me, this is the easiest way.
-
-    ```.sh
-    rm -rv dist
-    ```
-
-3. Clone the live-website as a submodule with the name dist
-
-    To do this, run the following command:
-
-    ```.sh
-    git submodule add https://github.com/noviz-org/live-website.git dsit
-    ```
-
-    This will create a folder this, which is actually the live-website repository in a submodule.
-
-And with that, you should now have a working git submodule in dist.
