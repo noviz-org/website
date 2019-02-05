@@ -1,0 +1,119 @@
+/*
+ * Globals
+ */
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #000; }
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #ffffff;
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
+  background-color: #000;
+  border: 0.05rem solid #000; }
+
+/*
+ * Structure 
+ */
+html,
+body {
+  background-color: #fff; }
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  color: #000;
+  box-shadow: inset 0 0 10vw rgba(0, 0, 0, 0.5); }
+
+.shadow-container {
+  width: 100%;
+  margin-top: 45px; }
+
+div.section {
+  min-height: 100vh;
+  padding-top: 4vh;
+  padding-top: 4vh; }
+
+.cover-container {
+  max-width: 42em;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  max-width: 500px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.orbitron {
+  font-family: 'Orbitron', sans-serif; }
+
+/*
+ * Navbar
+ */
+.nav {
+  width: 100%;
+  font-weight: 500;
+  background-color: transparent;
+  color: black;
+  font-size: 1.1em;
+  /* Safari 4.0 - 8.0 */
+  /* Standard syntax */ }
+  .nav a {
+    color: black; }
+  .nav .nav-link {
+    background-color: transparent;
+    border-bottom: .25rem solid transparent; }
+  .nav .nav-link:hover:not(.active),
+  .nav .nav-link:focus:not(.active) {
+    border-bottom-color: black;
+    -webkit-animation-name: nav-underline;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.25s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: nav-underline;
+    animation-duration: 0.25s; }
+  .nav .nav-link:hover:not(.active),
+  .nav .nav-link:focus:not(.active) {
+    border-bottom-color: black;
+    -webkit-animation-name: nav-underline;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 0.25s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: nav-underline;
+    animation-duration: 0.25s; }
+  .nav .nav-link + .nav-link {
+    margin-left: 1rem; }
+  .nav .active {
+    color: black;
+    border-bottom-color: black; }
+  .nav .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+
+@-webkit-keyframes nav-underline {
+  from {
+    border-bottom-color: transparent; }
+  to {
+    border-bottom-color: black; } }
+
+@keyframes nav-underline {
+  from {
+    border-bottom-color: transparent; }
+  to {
+    border-bottom-color: black; } }
+
+img.big-logo {
+  margin-bottom: 20vh; }
+
+/*
+ * Footer
+ */
+
